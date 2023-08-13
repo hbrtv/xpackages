@@ -8,11 +8,19 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=miniupnpd
+<<<<<<< HEAD
 PKG_VERSION:=20230726
 PKG_RELEASE:=1
 
 PKG_SOURCE_URL:=https://codeload.github.com/x-wrt/miniupnp/tar.gz/$(PKG_VERSION)?
 PKG_HASH:=ddb2d4e5c3c728157f34da89981932aae9632c950058aaf2115871b40fb56368
+=======
+PKG_VERSION:=20230312
+PKG_RELEASE:=1
+
+PKG_SOURCE_URL:=https://codeload.github.com/x-wrt/miniupnp/tar.gz/$(PKG_VERSION)?
+PKG_HASH:=f7fc6e9fbc98b08ed3699318eaabb319813fea002bda46b0c9841fdfb5fa404a
+>>>>>>> origin/simplified
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)/miniupnpd
 
@@ -34,7 +42,7 @@ define Package/miniupnpd/Default
   SECTION:=net
   CATEGORY:=Network
   DEPENDS:= \
-	+libcap-ng \
+	+libcap \
 	+libmnl \
 	+libuuid
   PROVIDES:=miniupnpd
